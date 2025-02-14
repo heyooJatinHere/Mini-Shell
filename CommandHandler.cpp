@@ -6,7 +6,7 @@
 using namespace std;
 
 bool isBuiltInCommand(const string& command){
-    return (command=="cd" || command=="pwd" || command=="exit" || command=="cmdtype" || command=="echo");
+    return (command=="cd" || command=="pwd" || command=="exit" || command=="type" || command=="echo");
 }
 
 void executeBuiltInCommand(const vector<string>& tokens){
@@ -36,9 +36,9 @@ void executeBuiltInCommand(const vector<string>& tokens){
             cout<<tokens[i]<<" ";
         }
         cout<<endl;
-    }else if(cmd=="cmdtype"){
+    }else if(cmd=="type"){
         if(tokens.size()<2){
-            cerr<<"cmdtype: missing argument\n";
+            cerr<<"type: missing argument\n";
             return;
         }
         string subCmd=tokens[1];
